@@ -99,30 +99,7 @@ componentDidUpdate = async (prevProps, prevState)  => {
         }
                     
     };
-  // used to return main page
-  changeSearchPage = async () => {
-    this.setState(() => ({
-      showSearchPage: false
-    }))
-  };
 
-  changeMainPage = async () => {
-    this.setState(() => ({
-      showSearchPage: true
-    }))
-  }
-
-  onChangeSearchBook = async (book) => {
-    if(this.state.readingsId.includes(book.id)){
-      return("currentlyReading")
-    } else if(this.state.wantReadId.includes(book.id)){
-      return("wantToRead")
-    } else if(this.state.readId.includes(book.id)){
-      return("read")
-    } else{
-      return("none")
-    }
-  };
 
   render() {
 
@@ -145,7 +122,7 @@ componentDidUpdate = async (prevProps, prevState)  => {
             <Link to='/search' className="open-search">
               <button>Add a book</button>
             </Link>  
-          </Route>
+          </Route>    
           <div>
           <Route exact path='/search'>
             <Search 
